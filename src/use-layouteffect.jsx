@@ -1,16 +1,26 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export function WorkshopUseLayoutEffect() {
-  const [count, setCount] = useState(1);
+  const [show, setShow] = useState(false)
+
+  const popup = useRef()
+  const button = useRef()
 
   useEffect(() => {
-    console.group(count);
-  }, [count]);
+    if(!popup.current || !button.current) return;
+
+    const { bottom } = button.current.getBoundingClientRect();
+
+    popup.current.style.top = `${bottom + 100}px`
+  }, [show])
 
   return (
     <>
-      <h1>{count}</h1>
-      <button onClick={() => setCount((prev) => prev + 1)}>Increment</button>
+      <button ref={button} onClick={() => setShow((prev) => !prev)}>Toggle Modal</button>
+
+      {show && (
+        <div style={{ position: 'absolute' }} ref={popup}>hello from modal</div>
+      )}
     </>
-  );
+  )
 }
