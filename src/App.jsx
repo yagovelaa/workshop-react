@@ -1,8 +1,7 @@
 // import { WorkshopUseEffect } from "./use-effect";
-// import { WorkshopUseReducer } from "./use-reducer";
 // import { WorkshopUseRef } from "./use-ref";
 // import { WorkshopUseState } from "./use-state";
-// import { WorkshopUseMemo } from "./use-memo";
+// import { WorkshopUseReducer } from "./use-reducer";
 // import { WorkshopUseCallback } from "./use-callback";
 
 import { WorkshopUseLayoutEffect } from "./use-layouteffect";
@@ -19,7 +18,8 @@ export function App() {
       {/* <WorkshopUseRef /> */}
       {/* <WorkshopUseReducer /> */}
 
-      {/* <ThemeContextProvider>
+      {/* 
+      <ThemeContextProvider>
         <Message />
         <Greeting />
       </ThemeContextProvider> */}
